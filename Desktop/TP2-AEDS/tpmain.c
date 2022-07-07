@@ -2,6 +2,8 @@
 #include "tp.h"
 
 void main() {
+    struct Onibus onb[4];
+    struct Pessoa *p;
     int op = 0, numbus = 0;
     while(op != 5){
         printf("\n=======Menu de Opções=======");
@@ -10,18 +12,22 @@ void main() {
         printf("Opção desejada: ");
         scanf("%d", &op);
         if(op == 1) {
-            cadastrarbus();
+            cadastrarbus(onb);
         }
         if(op == 2) {
-            cadastrarnum();
+            cadastrarnum(onb);
         }
         if(op == 3) {
             printf("Insira o número do ônibus desejado: ");
             scanf("%d", &numbus);
-            reservar(numbus);
+            reservar(onb, p, numbus);
+            numbus = 0;
         }
         if(op == 4) {
-            consultarbus();
+            printf("Insira o número do ônibus desejado: ");
+            scanf("%d", &numbus);
+            consultarbus(onb, numbus);
+            numbus = 0;
         }
         if(op == 5) {
             consultarpas();
