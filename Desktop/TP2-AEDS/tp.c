@@ -26,11 +26,15 @@ void reservar(struct Onibus onb[], struct Pessoa p[], int n){
     }
     else{
         printf("Insira seu nome: ");
+        fgets(p->nome, 20, stdin);
         for(int i = 0; i < 4; i++){
             if(n == onb[i].numerobus){
-                if(onb[i].lugares == 0){
+                if(onb[i].lugares != 0){
                     onb[i].lugares -= 1;
                     printf("Reserva Confirmada");
+                }
+                else{
+                    printf("O ônibus está lotado!");
                 }
             }
         }
