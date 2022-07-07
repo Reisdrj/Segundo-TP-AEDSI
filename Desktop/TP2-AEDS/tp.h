@@ -4,12 +4,13 @@
 struct Onibus{
     int numerobus;
     int lugares;
+    int cadastros[4];
 };
 
 struct Pessoa{
-    char nome[30];
+    char nome[20];
     int bus;
-    int assento;
+    int reservas[];
 };
 
 void cadastrarbus(struct Onibus onb[]);
