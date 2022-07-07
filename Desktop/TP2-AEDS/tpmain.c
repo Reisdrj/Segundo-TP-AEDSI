@@ -1,9 +1,8 @@
 #include <stdio.h> 
 #include "tp.h"
 
-void main() {
+int main() {
     struct Onibus onb[4];
-    struct Pessoa *p;
     int op = 0, numbus = 0;
     while(op != 5){
         printf("\n=======Menu de Opções=======");
@@ -20,14 +19,11 @@ void main() {
         if(op == 3) {
             printf("Insira o número do ônibus desejado: ");
             scanf("%d", &numbus);
-            reservar(onb, p, numbus);
+            reservar(onb, numbus);
             numbus = 0;
         }
         if(op == 4) {
-            printf("Insira o número do ônibus desejado: ");
-            scanf("%d", &numbus);
-            consultarbus(onb, numbus);
-            numbus = 0;
+            consultarbus();
         }
         if(op == 5) {
             consultarpas();
@@ -36,4 +32,5 @@ void main() {
             break;;
         }
     }
+    return 0;
 }

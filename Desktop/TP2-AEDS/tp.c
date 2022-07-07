@@ -20,8 +20,7 @@ void cadastrarnum(struct Onibus onb[]){
     }
 }
 
-void reservar(struct Onibus onb[], struct Pessoa p[], int n){
-    int confirmacao = 0;
+void reservar(struct Onibus onb[], int n){
     if(n != onb[0].numerobus && n != onb[1].numerobus && n != onb[2].numerobus && n != onb[3].numerobus) {
         printf("Opção inválida!");
     }
@@ -29,22 +28,18 @@ void reservar(struct Onibus onb[], struct Pessoa p[], int n){
         for(int i = 0; i < 4; i++){
             if(n == onb[i].numerobus){
                 if(onb[i].lugares != 0){
-                    onb[i].lugares -= 1;
-                    confirmacao++;   
+                    onb[i].lugares -= 1;   
                 }
                 else{
                     printf("O ônibus está lotado!");
                 }
             }
         }
-        confirmacao = 0;
     }
 }
 
 void consultarbus(struct Onibus onb[], int n){
-    for(int i = 0; i < 4; i++){
-
-    }
+    printf("Hwei");
 }
 
 void consultarpas(){
