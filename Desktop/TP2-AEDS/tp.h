@@ -1,22 +1,19 @@
 #ifndef TP
 #define TP
 
-#include <stdlib.h>
-
 struct Onibus{
     int numerobus;
     int lugares;
+    char nome[45][30];
+    int passageiro_bus;
+    
 };
 
-struct Pessoa{
-    char nome[20];
-    int bus;
-};
 
 void cadastrarbus(struct Onibus onb[]);
 void cadastrarnum(struct Onibus onb[]);
 void reservar(struct Onibus onb[], int a);
-void consultarbus();
+void consultarbus(struct Onibus onb[], int a);
 void consultarpas();
  
 #endif //TP
