@@ -71,7 +71,7 @@ void consultarpas(char *nomes,struct Onibus onb[]){
     for(int i = 0;i<4;i++){
         int qnt=0;
         for(int j = 0;j<onb[i].passageiro_bus;j++){
-            if(strcmp(nomes,onb[i].nome[j])){
+            if(strcmp(nomes,onb[i].nome[j])==0){
                 qnt++;
             }
         }
