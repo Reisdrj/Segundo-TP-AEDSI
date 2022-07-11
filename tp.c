@@ -26,7 +26,7 @@ int cadastrarnum(struct Onibus onb[], int a){
         return 1;
     }
     else{
-        printf("Cadastre o ônibus primeiro para poder determinar a quantidade de lugares!");
+        printf("\nCadastre o ônibus primeiro para poder determinar a quantidade de lugares!");
         return 0;
     }
 }
@@ -52,7 +52,7 @@ void reservar(struct Onibus onb[], int n){
                 printf("Reserva Confirmada");
                 }
             else{
-                printf("O ônibus está lotado!");
+                printf("\nO ônibus está lotado!");
             }
         
         
@@ -73,7 +73,7 @@ void consultarbus(struct Onibus onb[], int n, int b, int c){
         }
     }
     else{
-        printf("Cadastre algum ônibus e a quantidade de lugares antes para poder consultar!");
+        printf("\nCadastre algum ônibus e a quantidade de lugares antes para poder consultar!");
     }
 }
 
@@ -86,10 +86,10 @@ void consultarpas(char *nome, struct Onibus onb[], int n){
                     qnt++;
                 }
             }
-            printf("A quantidade de reservas do passageiro [%s] no onibus[%d] é [%d]\n",nome,onb[i].numerobus,qnt);
+            printf("\nA quantidade de reservas do passageiro [%s] no onibus[%d] é [%d]\n",nome,onb[i].numerobus,qnt);
         }
     }
     else{
-        printf("Cadastre o ônibus e quantidade de passageiros antes de consultar por um passageiro!");
+        printf("\nCadastre o ônibus e quantidade de passageiros antes de consultar por um passageiro!");
     }
 }

@@ -1,3 +1,5 @@
+/* Feito por Marcos Vinicius e Davi dos Reis */
+
 #include <stdio.h> 
 #include <string.h>
 #include "tp.h"
@@ -7,7 +9,7 @@ void main() {
     int op = 0, numbus = 0, cond1 = 0, cond2 = 0, cond3 = 0, conferir = -1;
     char nome[30];
     while(op != 6){
-        printf("\n=======Menu de Opções=======");
+        printf("\n\n=======Menu de Opções=======");
         printf("\n1 - Cadastrar número dos ônibus \n2 - Cadastrar número de lugares \n3 - Reservar Passagem \n4 - Consultar Ônibus \n5 - Consultar por passageiro \n6 - Finalizar");
         printf("\n============================\n");
         printf("Opção desejada: ");
@@ -45,5 +47,6 @@ void main() {
         if(op == 6) {
             break;
         }
+        op = 0;
     }
 }
