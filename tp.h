@@ -11,9 +11,9 @@ struct Onibus{
 
 
 void cadastrarbus(struct Onibus onb[]);
-void cadastrarnum(struct Onibus onb[]);
+int cadastrarnum(struct Onibus onb[], int a);
 void reservar(struct Onibus onb[], int a);
 void consultarbus(struct Onibus onb[], int a, int b, int c);
-void consultarpas();
+void consultarpas(char *nome, struct Onibus onb[], int n);
  
 #endif //TP

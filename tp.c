@@ -11,16 +11,23 @@ void cadastrarbus(struct Onibus onb[]) {
     printf("\n");
     printf("Ônibus  Numero\n");
     for(int i = 0; i < 4; i++){
-        printf("[%d]  [%d]\n", i+1,onb[i].numerobus);
+        printf(" [%d]     [%d]\n", i+1,onb[i].numerobus);
     }
 }
 
-void cadastrarnum(struct Onibus onb[]){
-    for(int i = 0; i < 4; i++){
-        printf("[Insira o número de lugares disponíveis em cada ônibus]\n ");
-        printf("Ônibus [%d]:", onb[i].numerobus);
-        scanf("%d", &onb[i].lugares);
-        onb[i].passageiro_bus=0;
+int cadastrarnum(struct Onibus onb[], int a){
+    if(a != 0){    
+        for(int i = 0; i < 4; i++){
+            printf("[Insira o número de lugares disponíveis em cada ônibus]\n ");
+            printf("Ônibus [%d]:", onb[i].numerobus);
+            scanf("%d", &onb[i].lugares);
+            onb[i].passageiro_bus=0;
+        }
+        return 1;
+    }
+    else{
+        printf("Cadastre o ônibus primeiro para poder determinar a quantidade de lugares!");
+        return 0;
     }
 }
 
@@ -70,20 +77,19 @@ void consultarbus(struct Onibus onb[], int n, int b, int c){
     }
 }
 
-void consultarpas(char *nomes,struct Onibus onb[], int a){
-    if(a != 0){    
+void consultarpas(char *nome, struct Onibus onb[], int n){    
+    if(n != 0){    
         for(int i = 0;i<4;i++){
             int qnt=0;
             for(int j = 0;j<onb[i].passageiro_bus;j++){
-                if(strcmp(nomes,onb[i].nome[j])==0){
+                if(strcmp(nome,onb[i].nome[j])==0){
                     qnt++;
                 }
             }
-            printf("A quantidade de reservas do passageiro [%s] no onibus[%d] é [%d]\n",nomes,onb[i].numerobus,qnt);
+            printf("A quantidade de reservas do passageiro [%s] no onibus[%d] é [%d]\n",nome,onb[i].numerobus,qnt);
         }
     }
     else{
-        printf("É necessário reservar no mínimo um assento para poder consultar algum indivíduo!");
+        printf("Cadastre o ônibus e quantidade de passageiros antes de consultar por um passageiro!");
     }
-
 }

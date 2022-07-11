@@ -4,7 +4,7 @@
 
 void main() {
     struct Onibus onb[4];
-    int op = 0, numbus = 0, cond1 = 0, cond2 = 0, cond3 = 0;
+    int op = 0, numbus = 0, cond1 = 0, cond2 = 0, cond3 = 0, conferir = -1;
     char nome[30];
     while(op != 6){
         printf("\n=======Menu de Opções=======");
@@ -17,8 +17,10 @@ void main() {
             cond1++;
         }
         if(op == 2) {
-            cadastrarnum(onb);
-            cond2++;
+            conferir = cadastrarnum(onb, cond1);
+            if(conferir = 1){
+                cond2++;
+            }
         }
         if(op == 3) {
             printf("Insira o número do ônibus desejado: ");
@@ -38,7 +40,7 @@ void main() {
             setbuf(stdin,NULL);
             fgets(nome,30,stdin);
             setbuf(stdin,NULL);
-            consultarpas(nome, onb, cond3);
+            consultarpas(nome, onb, cond2);
         }
         if(op == 6) {
             break;
